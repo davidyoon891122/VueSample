@@ -10,13 +10,20 @@
     <div id="app">
         <h1>Hello, {{userName}} for Vue!</h1>
         <input type="text" v-model="userName">
+        <p>{{frameworks}}</p>
+        <ul>
+            <li v-for="framework in frameworks">
+                {{framework}}
+            </li>
+        </ul>
     </div>
 
     <script>
         var app = new Vue({
             el: '#app',
             data: {
-                userName: 'DavidYoon'
+                userName: 'DavidYoon',
+                frameworks: ['react', 'vue', 'angular']
             }
         })
 
