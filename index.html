@@ -8,14 +8,15 @@
 </head>
 <body>
     <div id="app">
-        {{ message }}
+        <h1>Hello, {{userName}} for Vue!</h1>
+        <input type="text" v-model="userName">
     </div>
 
     <script>
         var app = new Vue({
             el: '#app',
             data: {
-                message: 'Hello Vue.js!!'
+                userName: 'DavidYoon'
             }
         })
 
