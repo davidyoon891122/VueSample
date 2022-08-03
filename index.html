@@ -16,6 +16,7 @@
                 {{framework}}
             </li>
         </ul>
+        <button v-on:click="addItem">AddItem</button>
     </div>
 
     <script>
@@ -24,6 +25,11 @@
             data: {
                 userName: 'DavidYoon',
                 frameworks: ['react', 'vue', 'angular']
+            },
+            methods: {
+                addItem() {
+                    console.log('Add item works')
+                }
             }
         })
 
