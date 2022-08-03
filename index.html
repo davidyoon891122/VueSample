@@ -10,13 +10,14 @@
     <div id="app">
         <h1>Hello, {{userName}} for Vue!</h1>
         <input type="text" v-model="userName">
+        <button v-on:click="addItem">Add</button>
+        <button v-on:click="popItem">Remove</button>
         <p>{{frameworks}}</p>
         <ul>
             <li v-for="framework in frameworks">
                 {{framework}}
             </li>
         </ul>
-        <button v-on:click="addItem">AddItem</button>
     </div>
 
     <script>
@@ -28,7 +29,11 @@
             },
             methods: {
                 addItem() {
-                    console.log('Add item works')
+                    console.log(this.userName)
+                    this.frameworks.push(this.userName)
+                },
+                popItem() {
+                    this.frameworks.pop()
                 }
             }
         })
