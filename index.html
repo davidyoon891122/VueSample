@@ -10,12 +10,13 @@
     <div id="app">
         <h1>Hello, {{userName}} for Vue!</h1>
         <input type="text" v-model="userName">
+        <p v-if="userName.length > 9"> Username is too Long</p>
         <button @click="addItem">Add</button>
         <button @click="popItem">Remove</button>
-        <p>{{frameworks}}</p>
+        <p>{{todoList}}</p>
         <ul>
-            <li v-for="framework in frameworks">
-                {{framework}}
+            <li v-for="todo in todoList">
+                {{todo}}
             </li>
         </ul>
     </div>
@@ -25,7 +26,8 @@
             el: '#app',
             data: {
                 userName: 'DavidYoon',
-                frameworks: ['react', 'vue', 'angular']
+                frameworks: ['react', 'vue', 'angular'],
+                todoList: []
             },
             methods: {
                 addItem() {
